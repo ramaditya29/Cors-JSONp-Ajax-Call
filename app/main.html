@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="searchApp">
+<head> <title>Search App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="shortcut icon" type="image/png" href="images/googleg_lodp.ico"/>
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+
+</head>
+<body ng-controller="searchCtrl">
+
+<nav id="mainNav" class="navbar navbar-default">
+     <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-th"></span> </a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-bell"></span> </a></li>
+      </ul>
+</nav>
+
+<div class="jumborton">
+    <div class="container">
+    <img ng-src="images/googlelogo_color.png">
+      <input type="text" id ="intf" ng-model="txt" class="input-group form-control"> <br>
+      <button class="btn btn-default"  type="button" ng-click="search(txt)" >Google Search</button> &nbsp;
+     <button class="btn btn-default"  type="button" ng-click="search(txt)" >I m feeling Lucky</button>
+    </div>
+    </div>
+
+
+<footer class="container-fluid">
+
+  <ul class="foot nav navbar-nav">
+    <li><a href="#">Advertising</a></li>
+    <li><a href="#">Buisness</a></il>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Header</a></li>
+  </ul>
+  </footer>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/controller.js"></script>
+<script type="text/javascript" src="scripts/filter.js"></script>
+
+</body>
+</html>

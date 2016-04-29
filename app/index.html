@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="searchApp">
+<head> <title>Search App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+  <link rel="shortcut icon" type="image/png" href="images/googleg_lodp.ico"/>
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+
+</head>
+<body ng-controller="searchCtrl">
+
+<nav class="navbar navbar-default">
+ 
+    <div class="navbar navbar-header">
+      <a class="navbar-brand" href="https://www.google.com"><img ng-src="images/google_logo.png" /></a>
+   </div>
+   <div id ="abc" class="input-group nav navbar-nav">
+      <input type="text" id ="intf" ng-model="srchTxt" class="form-control">
+     
+       
+        <span class="input-group-btn">
+          <button class="btn btn-default" id="srchId" type="button" ng-click="search(srchTxt)" ><span class="glyphicon glyphicon-search"></button>
+        </span>
+    </div>
+
+    <span class="glyphicon glyphicon-microphone"></span>
+     <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-th"></span> </a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-bell"></span> </a></li>
+      </ul>
+  
+</nav>
+<nav ng-show = "res.length > 0" class="navbar2 navbar navbar-default" id ="sec1">
+    <ul class="nav navbar-nav" id="sec2">
+     <li><a class="active" href="#">All</a></li>
+       <li> <a href="#">Images</a> </li>
+        <li><a href="#">Videos</a> </li>
+        <li><a href="#">News</a> </li>
+        <li><a href="#">Shopping</a> </li>
+        <li><a href="#">More</a> </li>
+        <li><a href="#">Search tools</a></li>
+      </ul>
+    
+     <div id="sec3" class="nav navbar-nav navbar-right ">
+      <ul class="btn-toolbar" role="toolbar"> 
+        <li class="btn-group"> 
+          <button type="button" class="btn btn-default btnColor1"> 
+              <span class="glyphicon glyphicon-user"></span> 
+          </button>
+          <button  type="button" class="btn btn-default btnColor"> 
+              <span class="glyphicon glyphicon-globe"></span> 
+          </button>
+         </li>
+         <li class="btn-group">
+          <button type="button" class="btn btn-default btnColor"> 
+              <span class="glyphicon glyphicon-cog"></span> 
+          </button>
+         </li></ul>
+        </div>
+</nav>
+
+
+<div class="container" id="cont1">
+ <!-- <h6 ng-hide="true">About 1,350,000,000 results (0.57 seconds) </h6> -->
+       
+  <div class="row">
+    <div class="col-sm-6">
+    <div ng-repeat=" x in res ">
+      <h4><a href="{{x.title | htmlToPlaintext}}"> {{x.title | htmlToPlaintext}}</a></h4>
+         <a id ="linC" hre="{{x.url | htmlToPlaintext}}">{{x.url | htmlToPlaintext}}</a>
+         <p>{{x.contentSnippet | htmlToPlaintext}} </p>
+      </div>
+        
+        
+    </div>
+  </div>
+</div>
+
+
+<footer ng-show = "res.length > 0" class="container-fluid">
+ <!-- <p class="foot">Santa Clara, CA - From your Internet address - Use precise location - Learn more </p> -->
+  <ul class="foot nav navbar-nav">
+    <li><a href="#">Help</a></li>
+    <li><a href="#">Feedback</a></il>
+    <li><a href="#">Privacy</a></li>
+    <li><a href="#">Header</a></li>
+  </ul>
+  </footer>
+
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/controller.js"></script>
+<script type="text/javascript" src="scripts/services.js"></script>
+<script type="text/javascript" src="scripts/filter.js"></script>
+
+</body>
+</html>
